@@ -1,0 +1,30 @@
+.account-label {
+    display: block;
+    font-size: 15px;
+    color: #333;  
+    padding: 0 10px;  
+    margin: 0 auto -5px 0;
+}
+
+.account-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* Focus style */
+.account-input:focus {
+    border-color: #000;
+}
+
+/* Disabled input style */
+.account-input:disabled {
+    background: #f4f4f4;
+    color: #777;
+    cursor: not-allowed;
+}

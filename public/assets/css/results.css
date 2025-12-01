@@ -1,0 +1,51 @@
+/*
+    Books
+*/
+p.results {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.library-header-wrapper,
+.library-results-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 7px;
+    padding: 10px;
+}
+.library-header-wrapper .library-header-item {
+    font-weight: bold;
+    border: 1.5px solid #000;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 2px;
+}
+.library-header-wrapper .library-header-item,
+.library-results-wrapper .library-results-item {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+    Tooltip for reservation info
+*/
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+.tooltip:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    top: 120%;
+    left: -150%;
+    z-index: 9999;
+}
+/*
+    Search
+*/

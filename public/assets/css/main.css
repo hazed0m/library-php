@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    min-height: calc(100vh - 60px - 120px);
+}
+.hero-image {
+    position: relative;
+    background-image: url("../image/hero-min.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: calc(100vh - 60px - 120px);
+}
+.hero-image .title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*
+    Title
+*/
+h1, h2, h3 {
+    text-align: center;
+}
+h1.white {
+    color: #fff;
+}
+h1.underline, h2.underline {
+    position: relative;
+    width: fit-content;
+    margin: 20px auto;
+}
+h1.underline:after , h2.underline:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+}
+h1.white:after {
+    background-color: #fff;
+}
+h3.white {
+    padding: 0 20px;
+    text-align: left;
+    color: #fff;
+}
+h3.flex {
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+}
+/*
+    Success & Error
+*/
+.error-message,
+.success-message {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.success-message .success {
+    color: green;
+    font-weight: 300;
+}
+.error-message .error {
+    color: red;
+    font-weight: 300;
+}
+/*
+    Navigation
+*/
+.header,
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 20px 10px;
+}
+.footer {
+    padding: 50px 10px;
+}
+.navigation {
+    width: 100%;
+    padding-left: 20%;
+}
+.title .title-link {
+    color: #fff;
+    text-decoration: none;
+}
+ul.nav-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul.nav-list li.nav-item {
+    list-style-type: none;
+}
+ul.nav-list li.icon-wrapper a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 5px;
+}
+ul.nav-list li.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+ul.nav-list li.nav-item a.active .nav-text{
+    position: relative;
+}
+ul.nav-list li.nav-item a.active .nav-text:after,
+.link:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #fff;
+}
+/*
+    Form
+*/
+
+form.search-form,
+form.login-form,
+form.register-form,
+form.account-form {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+form.search-form {
+    padding-bottom: 30px;
+}
+form.register-form,
+form.account-form {
+    gap: 20px 0;
+    flex-direction: column;
+}
+.search-form .search-input,
+.search-form .search-select,
+.search-form .search-button,
+form.login-form .login-input,
+form.login-form .login-button,
+form.register-form .register-input,
+form.register-form .register-button,
+form.account-form .account-input,
+form.account-form .save-button
+{
+    padding: 10px;
+    margin: 0 10px;
+}
+.library-results-wrapper .cancel-button {
+    padding: 5px 10px;
+}
+.search-form .search-button,
+form.login-form .login-button,
+form.register-form .register-button,
+.library-results-wrapper .cancel-button,
+form.account-form .save-button {
+    background-color: #000;
+    color: #fff;
+    transition: 0.2s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-form .search-button:hover,
+form.login-form .login-button:hover, 
+form.register-form .register-button:hover, 
+.library-results-item .cancel-button:hover
+{
+    box-shadow: 0 0 3px #000;
+}
+.input-wrapper,
+.link-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+}
+
+form.register-form .input-wrapper,
+form.register-form .link-wrapper,
+form.account-form .input-wrapper,
+form.account-form .link-wrapper {
+    flex-direction: column;
+}
+.link {
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: 0.2s;
+}
+.link:after {
+    transition: 0.2s;
+}
+.link:hover:after {
+    background-color: #000;
+}
+
+/*
+    Hero slide
+*/
+.hero-image {
+    width: 100%;
+}
+.hero-image img {
+    width: 100%;
+    object-fit: contain;
+}
+/*
+    Pagination
+*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.page-btn {
+    padding: 6px 12px;
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+}
+
+.page-btn.active {
+    background: black;
+    color: white;
+}
