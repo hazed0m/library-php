@@ -27,6 +27,7 @@ p.results {
     justify-content: center;
     align-items: center;
 }
+
 /*
     Tooltip for reservation info
 */
@@ -46,6 +47,3 @@ p.results {
     left: -150%;
     z-index: 9999;
 }
-/*
-    Search
-*/

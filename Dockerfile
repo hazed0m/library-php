@@ -6,6 +6,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 # Apache document root
 WORKDIR /var/www/html/public
 
+# Copy project
+COPY public/ /var/www/html/
+
 # Allow .htaccess overrides
 RUN a2enmod rewrite
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
