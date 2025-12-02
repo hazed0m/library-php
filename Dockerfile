@@ -4,10 +4,7 @@ FROM php:8.2-apache
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Apache document root
-WORKDIR /var/www/html
-
-# Copy project
-COPY public/ /var/www/html/
+WORKDIR /var/www/html/public
 
 # Allow .htaccess overrides
 RUN a2enmod rewrite
