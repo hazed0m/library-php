@@ -1,20 +1,22 @@
 FROM php:8.2-apache
 
-# Change Apache DocumentRoot to /var/www/html/public
-ENV APACHE_DOCUMENT_ROOT=/var/www/public
+# Enable required PHP modules
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
-    /etc/apache2/sites-available/000-default.conf \
-    /etc/apache2/apache2.conf
+# Apache document root
+WORKDIR /var/www/html
 
-# Install PHP extensions
-RUN apt-get update && apt-get install -y \
-    default-mysql-client \
-    && docker-php-ext-install pdo pdo_mysql mysqli
+# Copy project
+COPY public/ /var/www/html/
 
-# # Fix ports for Fly.io (Apache listens on 8080)
-# RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf
+# Allow .htaccess overrides
+RUN a2enmod rewrite
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
-# EXPOSE 8080
+# Change Apache to listen on 8080 (Koyeb requirement)
+RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:8080/g' /etc/apache2/sites-enabled/000-default.conf
+
+EXPOSE 8080
 
 CMD ["apache2-foreground"]
